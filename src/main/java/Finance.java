@@ -1,5 +1,3 @@
-
-
 import java.util.Arrays;
 import java.util.Map;
 
@@ -28,15 +26,15 @@ public class Finance {
     private static void executeCommand(String command, String[] arguments) {
         switch(command) {
             case BEST_LOAN_RATES:
-                System.out.println("Finding best loan rates...");
+                System.out.println("Finding best loan rates ...");
                 BestLoanRates.main(arguments);
                 return;
             case SAVINGS_CALCULATOR:
-                System.out.println("Finding your net savings...");
+                System.out.println("Finding your net savings ...");
                 SavingsCalculator.main(arguments);
                 return;
             case MORTGAGE_CALCULATOR:
-                System.out.println("Finding your monthly payment...");
+                System.out.println("Finding your monthly payment ...");
                 MortgageCalculator.main(arguments);
                 return;
         }
@@ -49,7 +47,7 @@ public class Finance {
         }
         boolean isValidCommand = validateCommandArguments(args);
         if(!isValidCommand) {
-            commandsToUsage.get(args[0]);
+            System.out.println(commandsToUsage.get(args[0]));
             return;
         }
         executeCommand(command, Arrays.copyOfRange(args, 1, args.length));
